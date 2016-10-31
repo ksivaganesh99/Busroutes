@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <!--<base href="/">-->
+        <base href="Busroutes/">
         <meta name="author" content="SuperHeros">
         <meta name="description" content="Bus route finder">
         <meta name="keywords" content="buses,routes,adibatla,transportation">
@@ -14,16 +14,16 @@
         <link rel="apple-touch-icon" sizes="144x144" href="Busroutes/favicons/apple-touch-icon.png">
         <link rel="icon" type="image/png" href="Busroutes/favicons/favicon-32x32.png" sizes="32x32">
         <link rel="icon" type="image/png" href="Busroutes/favicons/favicon-16x16.png" sizes="16x16">
-        <link rel="manifest" href="Busroutes/favicons/manifest.json">
-        <link rel="mask-icon" href="Busroutes/favicons/safari-pinned-tab.svg" color="#5bbad5">
+        <link rel="manifest" href="favicons/manifest.json">
+        <link rel="mask-icon" href="favicons/safari-pinned-tab.svg" color="#5bbad5">
         <meta name="theme-color" content="#ffffff">
         
-        <link  rel="stylesheet" href="Busroutes/node_modules/bootstrap/dist/css/bootstrap.css">
+        <link  rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
      
-       <link  rel="stylesheet" href="Busroutes/css/bootstrap-tour.min.css">
+       <link  rel="stylesheet" href="css/bootstrap-tour.min.css">
      <!--  <link  rel="stylesheet" href="css\materialize.min.css">-->
     <!-- Custom styles for this template -->
-    <link href="Busroutes/styles.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -32,19 +32,19 @@
     <![endif]-->
           <!-- 1. Load libraries -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-           <script src="Busroutes/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-           <script src="Busroutes/js/bootstrap-tour.min.js"></script>
+           <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+           <script src="js/bootstrap-tour.min.js"></script>
            
-            <script src="Busroutes/node_modules/es6-shim/es6-shim.min.js"></script>
-            <script src="Busroutes/node_modules/systemjs/dist/system-polyfills.js"></script>
+            <script src="node_modules/es6-shim/es6-shim.min.js"></script>
+            <script src="node_modules/systemjs/dist/system-polyfills.js"></script>
 
-            <script src="Busroutes/node_modules/zone.js/dist/zone.js"></script>
-            <script src="Busroutes/node_modules/reflect-metadata/Reflect.js"></script>
+            <script src="node_modules/zone.js/dist/zone.js"></script>
+            <script src="node_modules/reflect-metadata/Reflect.js"></script>
 
-            <script src="Busroutes/node_modules/systemjs/dist/system.js"></script>
-            <script src="Busroutes/node_modules/rxjs/bundles/Rx.min.js"></script>
+            <script src="node_modules/systemjs/dist/system.js"></script>
+            <script src="node_modules/rxjs/bundles/Rx.min.js"></script>
 
-            <script src="Busroutes/node_modules/ng2-bootstrap/bundles/ng2-bootstrap.min.js"></script>
+            <script src="node_modules/ng2-bootstrap/bundles/ng2-bootstrap.min.js"></script>
             
              <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCtI0F6aCFd42kKeQKkfiwDC5dwpYk0R1c" type='text/javascript'></script>
         
@@ -74,20 +74,20 @@ $(document).on("scroll", function(){
         }
       },
       map: {
-        moment: 'Busroutes/node_modules/moment/moment.js',
-        "@angular/core": "Busroutes/node_modules/@angular/core/core.umd.js",
-        "@angular/common": "Busroutes/node_modules/@angular/common/common.umd.js",
-        "@angular/compiler": "Busroutes/node_modules/@angular/compiler/compiler.umd.js",
-        "@angular/platform-browser": "Busroutes/node_modules/@angular/platform-browser/platform-browser.umd.js",
-        "@angular/platform-browser-dynamic": "Busroutes/node_modules/@angular/platform-browser-dynamic/platform-browser-dynamic.umd.js",
-        "@angular/http" : "Busroutes/node_modules/@angular/http/http.umd.js",
-        "@angular/router" : "Busroutes/node_modules/@angular/router/router.umd.js",
+        moment: 'node_modules/moment/moment.js',
+        "@angular/core": "node_modules/@angular/core/core.umd.js",
+        "@angular/common": "node_modules/@angular/common/common.umd.js",
+        "@angular/compiler": "node_modules/@angular/compiler/compiler.umd.js",
+        "@angular/platform-browser": "node_modules/@angular/platform-browser/platform-browser.umd.js",
+        "@angular/platform-browser-dynamic": "node_modules/@angular/platform-browser-dynamic/platform-browser-dynamic.umd.js",
+        "@angular/http" : "node_modules/@angular/http/http.umd.js",
+        "@angular/router" : "node_modules/@angular/router/router.umd.js",
         // ng2-bootstrap specifics
-        "@angular/core/src/facade/lang": "Busroutes/node_modules/@angular/core/src/facade/lang.js",
+        "@angular/core/src/facade/lang": "node_modules/@angular/core/src/facade/lang.js",
 //        "@angular/platform-browser/src/animate/animation_builder": "node_modules/@angular/platform-browser/src/animate/animation_builder.js"
       }
     });
-    System.import('Busroutes/app/main')
+    System.import('app/main')
       .then(null, console.error.bind(console));
       // Instance the tour
 var tour = new Tour({
