@@ -32,19 +32,19 @@
     <![endif]-->
           <!-- 1. Load libraries -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-           <script src="node_modules\bootstrap\dist\js\bootstrap.min.js"></script>
-           <script src="js\bootstrap-tour.min.js"></script>
+           <script src="Busroutes\node_modules\bootstrap\dist\js\bootstrap.min.js"></script>
+           <script src="Busroutes\js\bootstrap-tour.min.js"></script>
            
-            <script src="node_modules/es6-shim/es6-shim.min.js"></script>
-            <script src="node_modules/systemjs/dist/system-polyfills.js"></script>
+            <script src="Busroutes\node_modules/es6-shim/es6-shim.min.js"></script>
+            <script src="Busroutes\node_modules/systemjs/dist/system-polyfills.js"></script>
 
-            <script src="node_modules/zone.js/dist/zone.js"></script>
-            <script src="node_modules/reflect-metadata/Reflect.js"></script>
+            <script src="Busroutes\node_modules/zone.js/dist/zone.js"></script>
+            <script src="Busroutes\node_modules/reflect-metadata/Reflect.js"></script>
 
             <script src="node_modules/systemjs/dist/system.js"></script>
             <script src="node_modules/rxjs/bundles/Rx.min.js"></script>
 
-            <script src="node_modules/ng2-bootstrap/bundles/ng2-bootstrap.min.js"></script>
+            <script src="Busroutes\node_modules/ng2-bootstrap/bundles/ng2-bootstrap.min.js"></script>
             
              <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCtI0F6aCFd42kKeQKkfiwDC5dwpYk0R1c" type='text/javascript'></script>
         
@@ -74,20 +74,20 @@ $(document).on("scroll", function(){
         }
       },
       map: {
-        moment: 'node_modules/moment/moment.js',
-        "@angular/core": "node_modules/@angular/core/core.umd.js",
-        "@angular/common": "node_modules/@angular/common/common.umd.js",
-        "@angular/compiler": "node_modules/@angular/compiler/compiler.umd.js",
-        "@angular/platform-browser": "node_modules/@angular/platform-browser/platform-browser.umd.js",
-        "@angular/platform-browser-dynamic": "node_modules/@angular/platform-browser-dynamic/platform-browser-dynamic.umd.js",
-        "@angular/http" : "node_modules/@angular/http/http.umd.js",
-        "@angular/router" : "node_modules/@angular/router/router.umd.js",
+        moment: 'Busroutes/node_modules/moment/moment.js',
+        "@angular/core": "Busroutes/node_modules/@angular/core/core.umd.js",
+        "@angular/common": "Busroutes/node_modules/@angular/common/common.umd.js",
+        "@angular/compiler": "Busroutes/node_modules/@angular/compiler/compiler.umd.js",
+        "@angular/platform-browser": "Busroutes/node_modules/@angular/platform-browser/platform-browser.umd.js",
+        "@angular/platform-browser-dynamic": "Busroutes/node_modules/@angular/platform-browser-dynamic/platform-browser-dynamic.umd.js",
+        "@angular/http" : "Busroutes/node_modules/@angular/http/http.umd.js",
+        "@angular/router" : "Busroutes/node_modules/@angular/router/router.umd.js",
         // ng2-bootstrap specifics
-        "@angular/core/src/facade/lang": "node_modules/@angular/core/src/facade/lang.js",
+        "@angular/core/src/facade/lang": "Busroutes/node_modules/@angular/core/src/facade/lang.js",
 //        "@angular/platform-browser/src/animate/animation_builder": "node_modules/@angular/platform-browser/src/animate/animation_builder.js"
       }
     });
-    System.import('app/main')
+    System.import('Busroutes/app/main')
       .then(null, console.error.bind(console));
       // Instance the tour
 var tour = new Tour({
@@ -115,7 +115,7 @@ tour.start();
     <!-- 3. Display the application -->
     <body class="bodystyle">
         
-        <bus-route><div class="pagecenter"><img src="82.gif" alt="...loading"/></div></bus-route>
+        <bus-route><div class="pagecenter"><img src="Busroutes/82.gif" alt="...loading"/></div></bus-route>
        
     </body>
 </html>
