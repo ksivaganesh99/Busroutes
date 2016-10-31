@@ -31,8 +31,8 @@ coverage
 build/Release
 
 # Dependency directories
-node_modules
-jspm_packages
+#node_modules
+#jspm_packages
 
 # Optional npm cache directory
 .npm
@@ -43,10 +43,10 @@ jspm_packages
 
 ### Typings ###
 ## Ignore downloaded typings
-typings
+#typings
 
 .vscode
-app/*.js
-app/*.js.map
-app/**/*.js
-app/**/*.js.map
+#app/*.js
+#app/*.js.map
+#app/**/*.js
+#app/**/*.js.map
