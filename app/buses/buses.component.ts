@@ -91,4 +91,39 @@ export class BusesComponent implements OnInit,OnDestroy,OnChanges {
      });
        
         }
+            public swapBusDetails(){
+        console.log("swap clicked");
+        let srcValue=document.getElementById("srcplace").value;
+            let dstValue=document.getElementById("destplace").value;
+        console.log("srcValue="+srcValue);
+        console.log("dstValue="+dstValue);
+        document.getElementById("srcplace").value = dstValue;
+        document.getElementById("destplace").value = srcValue;
+        if(dstValue === "Adibatla"){
+            this.destloc=true;
+            this.destadi=false;
+            this.srcloc=false;
+            this.sourcevalue="";
+           //// document.getElementById("destplace").value="Select to location";
+            this._busservices.getFromAdibatla(srcValue)
+                .subscribe(data => {this.buses=data;console.log(data);},error => console.log(error),()=>{console.log("completed")
+                    this._busservices.getWeather(this.buses.lattitude,this.buses.longitude)
+                        .subscribe(data => {this.weatherdata=data;console.log(data);},error => console.log(error),()=>console.log("weater fetched"));
+                });
+            this.sourcevalue=srcValue;
+        }else{
+           
+            this.destloc=false;
+            this.destadi=true;
+            this.srcloc=false;
+           // document.getElementById("destplace").value="Adibatla";
+            this._busservices.getToAdibatla(dstValue)
+                .subscribe(data => {this.buses=data;console.log(data);},error => console.log(error),()=>{console.log("completed")
+                    this._busservices.getWeather("17.236","78.54")
+                        .subscribe(data => {this.weatherdata=data;console.log(data);},error => console.log(error),()=>console.log("weater fetched"));
+                });
+            this.sourcevalue=dstValue;
+        }
+
+    }
 }

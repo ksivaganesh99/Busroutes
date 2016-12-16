@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SpinnerService } from '../shared/spinner.service';
 declare var google : any;
 @Component({
    
@@ -6,9 +7,10 @@ declare var google : any;
     templateUrl: 'app/common/contact.component.html'
 })
 export class ContactComponent implements OnInit {
-    constructor() { }
+    constructor(private _spinner:SpinnerService) { }
 
     ngOnInit() {
+         this._spinner.hide();
           var myOptions = {zoom:10,center:new google.maps.LatLng(17.2309294,78.5631429),mapTypeId: google.maps.MapTypeId.ROADMAP};
                
                  this.map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);

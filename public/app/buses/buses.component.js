@@ -101,6 +101,43 @@ System.register(['@angular/core', './bus.service', './bus-list.component', '../s
                             .subscribe(function (data) { _this.weatherdata = data; console.log(data); }, function (error) { return console.log(error); }, function () { return console.log("weater fetched"); });
                     });
                 };
+                BusesComponent.prototype.swapBusDetails = function () {
+                    var _this = this;
+                    console.log("swap clicked");
+                    var srcValue = document.getElementById("srcplace").value;
+                    var dstValue = document.getElementById("destplace").value;
+                    console.log("srcValue=" + srcValue);
+                    console.log("dstValue=" + dstValue);
+                    document.getElementById("srcplace").value = dstValue;
+                    document.getElementById("destplace").value = srcValue;
+                    if (dstValue === "Adibatla") {
+                        this.destloc = true;
+                        this.destadi = false;
+                        this.srcloc = false;
+                        this.sourcevalue = "";
+                        //// document.getElementById("destplace").value="Select to location";
+                        this._busservices.getFromAdibatla(srcValue)
+                            .subscribe(function (data) { _this.buses = data; console.log(data); }, function (error) { return console.log(error); }, function () {
+                            console.log("completed");
+                            _this._busservices.getWeather(_this.buses.lattitude, _this.buses.longitude)
+                                .subscribe(function (data) { _this.weatherdata = data; console.log(data); }, function (error) { return console.log(error); }, function () { return console.log("weater fetched"); });
+                        });
+                        this.sourcevalue = srcValue;
+                    }
+                    else {
+                        this.destloc = false;
+                        this.destadi = true;
+                        this.srcloc = false;
+                        // document.getElementById("destplace").value="Adibatla";
+                        this._busservices.getToAdibatla(dstValue)
+                            .subscribe(function (data) { _this.buses = data; console.log(data); }, function (error) { return console.log(error); }, function () {
+                            console.log("completed");
+                            _this._busservices.getWeather("17.236", "78.54")
+                                .subscribe(function (data) { _this.weatherdata = data; console.log(data); }, function (error) { return console.log(error); }, function () { return console.log("weater fetched"); });
+                        });
+                        this.sourcevalue = dstValue;
+                    }
+                };
                 __decorate([
                     core_1.ViewChild(bus_list_component_1.BusListComponent), 
                     __metadata('design:type', Object)

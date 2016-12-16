@@ -2,7 +2,7 @@
 <div class="jumbotron">
     <div class="row">
 <!--<label for="source">Source</label><input id="source" type="text" value="" [(ngModel)]="sourcevalue" placeholder="Enter source"/>-->
-<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" id="my-element">
+<div class="col-lg-5 col-md-5 col-sm-12 col-xs-12" id="my-element">
    <label for="srcplace"  class="pull-left">From</label> 
 <select name="Source" value="Source" class="form-control"  id="srcplace" (change)="getSrcBusDetails()" >
     <option [disabled]="!srcloc" >Select From location</option>
@@ -12,8 +12,15 @@
 </select>
 
 </div>
-
-<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" id="my-other-element">
+<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12" id="swap">
+    <a href="#" id="swap-element" *ngIf="(!srcloc && !destloc && sourcevalue) || (!srcloc && destloc && sourcevalue)" (click)="swapBusDetails()">
+       <span class="glyphicon glyphicon-resize-horizontal hidden-sm-down visible-md visible-lg" style="font-size: 150%;margin-top: 30px;"></span>
+       <span class="glyphicon glyphicon-resize-vertical hidden-md-up visible-sm visible-xs" style="font-size: 150%;margin-top: 5px;"></span>
+        <!--<img alt="Swap Locations" id="swapImgLarge" class="hidden-sm-down visible-md visible-lg" src="../../swap_large.png" style="height:25px;width:50%;position:relative;left:20%;top:30px;"  />
+        <img alt="Swap Locations" id="swapImgSmall" class="hidden-md-up visible-sm visible-xs" src="../../swap_small.png" style="height:50px;width:50px;position:relative;left:45%;top:10px;"/>-->
+    </a>
+</div>
+<div class="col-lg-5 col-md-5 col-sm-12 col-xs-12" id="my-other-element">
     <label for="destplace" class="pull-left">To</label> 
 <select name="Source" value="Source" class="form-control"  id="destplace"  [disabled]="srcloc" (change)="getDstBusDetails()" >
     <option [disabled]="!destadi || !destloc">Select to location</option>
@@ -24,6 +31,10 @@
 
 </div>
     </div>
+    <div class="row" *ngIf="!busessources">
+        Something has gone wrong. We are working on the issue. Please try again later.
+        Sorry for the inconvineance.
+        </div>
 </div>
 <!--
 <div class="dropdown" >
